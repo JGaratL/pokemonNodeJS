@@ -49,7 +49,7 @@ const handleRequest = async (req, res) => {
    const param = decodeURI(req.url.substring(1)); 
    const pokemon = findPokemon(param);
 
-   if (responseData) {
+   if (pokemon) {
        res.writeHead(200, { 'Content-Type': 'application/json' }); 
        res.end(JSON.stringify(transformToPlainObject(pokemon), null, 7));
    } else {
